@@ -1,10 +1,10 @@
 #  IMPLEMENTING THREE WEB SERVERS WITH A COMMON DATABASE AND NFS SERVER THAT SERVES AS A FILE SHARE STORAGE.
 
- Spinned up  3 RHEL webservers , 1 NFS server(RHEL) and 1 Database Server (UBUNTU) on AWS 
+ Spun up  3 RHEL webservers , 1 NFS server(RHEL) and 1 Database Server (UBUNTU) on AWS 
 
 ![pp1](https://user-images.githubusercontent.com/94229949/186647214-4290b32c-eee7-46c6-81d4-14367d4b7765.png)
 
-## PREPARE NFS SERVER
+## PREPARED NFS SERVER
 
  Spun up a EC2 instance 
 
@@ -62,7 +62,7 @@ Configured access to NFS for clients within the same subnet using ' sudo vi /etc
 ![pp9](https://user-images.githubusercontent.com/94229949/186656149-b28ff1f4-0472-4a28-88ab-5b67f8fc2c98.png)
 
 
-## CONFIGURE THE DATABASE SERVER
+## CONFIGURED THE DATABASE SERVER
 
 Installed MySQL server
 
@@ -74,7 +74,7 @@ Grant permission to webaccess user on tooling database to do anything only from 
 
 ![pp10](https://user-images.githubusercontent.com/94229949/186657459-ee1d8ec3-d366-45e6-ad3e-19255e40191c.png)
 
-## Prepare the Web Servers
+## PREPARED THE WEBSERVERS
 
 Spun up three web servers 
 
@@ -84,7 +84,7 @@ Installed NFS client using 'sudo yum install nfs-utils nfs4-acl-tools -y '
  
  ![pp11](https://user-images.githubusercontent.com/94229949/186659861-128eb537-52d8-422e-842c-267d44d24a4a.png)
 
-Install Remi’s repository, Apache and PHP 
+Install Remi’s repository, Apache and PHP on all three webservers
 
 ![pp12](https://user-images.githubusercontent.com/94229949/186660544-c5e57fef-e9bc-4a0e-9099-214645c96d24.png)
 
@@ -100,7 +100,7 @@ Located the log folder for Apache on the web server, mounted it to the NFS serve
 
 ![pppppp0](https://user-images.githubusercontent.com/94229949/186662336-7d93a16b-b667-4ca1-94b6-cab70bec899a.png)
 
-Installed git, initialized and forked the tooling website's code to the webserver.
+Installed git, initialized and forked the tooling website's code to one of the webservers.
 
 ![pp13](https://user-images.githubusercontent.com/94229949/186662750-41f82536-86c5-4081-9223-57d79904d901.png)
 
@@ -108,7 +108,7 @@ Deployed the tooling webiste's code to the webserver, and ensured that the html 
 
 ![pp14](https://user-images.githubusercontent.com/94229949/186663395-50e258bd-aaad-4cc5-8a04-f8e5127dc7d2.png)
 
-Updated the website’s configuration to connect to the database (in /var/www/html/functions.php file). Applied tooling-db.sql script to the database using this command
+Updated the website’s configuration to connect to the database (in /var/www/html/functions.php file). Applied tooling-db.sql script to the database 
 
 ![pp15](https://user-images.githubusercontent.com/94229949/186664102-f84ea35b-2fb3-4c26-af01-b548b94c86d0.png)
 
